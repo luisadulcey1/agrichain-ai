@@ -1,0 +1,42 @@
+
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Local SQLite databases
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+
+# University-provided capstone datasets
+data/raw/
+data/processed/*.csv
+data/processed/*.npy
+data/processed/*.json
+
+# Review trained artifacts before public release
+models/
