@@ -1,0 +1,39 @@
+
+services:
+  
+  eda:
+    build: .
+    ports:
+      - "8501:8501"
+    command: streamlit run dashboards/01_eda_dashboard.py --server.port=8501
+    volumes:
+      - ./data:/app/data:ro
+
+
+  classifier:
+    build: .
+    ports:
+      - "8502:8502"
+    env_file:
+      - .env
+    command: streamlit run dashboards/02_classification_dashboard.py --server.port=8502
+    volumes:
+      - ./data:/app/data
+
+  rag:
+    build: .
+    ports:
+      - "8503:8503"
+    env_file:
+      - .env
+    command: streamlit run dashboards/05_rag_knowledge_assistant.py --server.port=8503
+
+  langgraph:
+    build: .
+    ports:
+      - "8504:8504"
+    env_file:
+      - .env
+    command: streamlit run dashboards/03_workflow_dashboard.py --server.port=8504
+    volumes:
+      - ./data:/app/data
