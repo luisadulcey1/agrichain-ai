@@ -1,12 +1,11 @@
-
 import json
 from pathlib import Path
 
+from sentence_transformers import SentenceTransformer
+import tensorflow as tf
 import faiss
 import joblib
 import numpy as np
-import tensorflow as tf
-from sentence_transformers import SentenceTransformer
 
 # ---------------------------------------------------------
 # AGRICHAIN AI - TASK 3
